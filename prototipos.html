@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototipos</title>
+  </head>
+  <body>
+    <script>
+      // constructor con los metodos,
+      // function Animal(nombre, genero){
+      //     //atributos
+      //     this.nombre = nombre;
+      //     this.genero = genero;
+      //     //metodos:
+      //     this.sonar = function () {
+      //         console.log("genero sonidos...");
+
+      //     this.saludar = function (){
+
+      //         console.log(`hola me llamo, ${this.nombre}`)
+      //     }
+      //     }
+
+      // }
+
+      // function Animal(nombre, genero){
+      //     //atributos del prototipo animal.
+      //     this.nombre = nombre;
+      //     this.genero = genero;
+      // }
+
+      // //metodos: agregados al prototipo:
+
+      // Animal.prototype.sonar = function () {
+      //         console.log("genero sonidos...");
+      //     }
+      // Animal.prototype.saludar  = function (){
+
+      //         console.log(`hola me llamo, ${this.nombre}`)
+      //     }
+
+      // //herencia prototipica:
+      // function Perro(nombre,genero,tamanio){
+      //     this.super = Animal;
+      //     this.super(nombre,genero);
+      //     this.tamanio = tamanio;
+
+      //  // perro esta herandado de animal
+      // Perro.prototype = new Animal();
+      // Perro.prototype.constructor = Perro;
+
+      // }
+
+      // const snoopy = new Animal ("Snoopy","Macho"),
+      // lolabunny = new Animal("Lola Bunny","Hembra");
+
+      // console.log(snoopy)
+      // console.log(lolabunny)
+
+      // snoopy.sonar();
+      // lolabunny.sonar();
+      // snoopy.saludar();
+      // lolabunny.saludar();
+
+      class Animal {
+        
+        constructor(nombre, genero) {
+          this.nombre = nombre;
+          this.genero = genero;
+        }
+        // metodos:
+        sonar() {
+          console.log("genero sonidos...");
+        }
+        saludar() {
+          console.log(`hola me llamo, ${this.nombre}`);
+        }
+      }
+
+      const minie = new Animal("Mimi", "hembra");
+        
+
+   console.log(minie);
+    minie.saludar();
+    minie.sonar();
+     
+      
+
+      class Perro extends Animal {
+          // metodo para recibir los parametros de la class que se hereda.
+            constructor(nombre, genero, tamanio) {
+          // este metodo super que llama al constructor de la clase padre
+          super(nombre, genero);
+          this.tamanio = tamanio;
+          this.raza = null;
+        }
+        sonar(){
+
+            console.log("soy un perror y mi sonido es un ladrido.")
+        }
+        ladrar(){
+
+            console.log("guau guau guau!!")
+
+        }
+        static QueEres(){
+          console.log("el mejo amigo del hombre");
+
+        }
+        set setRaza(raza){
+        this.raza=raza;
+        }
+        get getRaza(){
+       return this.raza;
+        }
+        
+      }
+      
+      Perro.QueEres();
+      const scooby = new Perro("Scooby", "Macho","Grande");
+      scooby.setRaza ="Gran danes";
+      console.log(scooby);
+      scooby.saludar();
+      scooby.sonar();
+      scooby.ladrar();
+      console.log(scooby.raza)
+      
+      
+     
+    </script>
+  </body>
+</html>

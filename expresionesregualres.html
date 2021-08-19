@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>expresion regular</title>
+</head>
+<body>
+    <script>
+
+        let cadena = "Lorem ipsum dolor sit amat L orem";
+
+        // let expresion = new RegExp("lorem","ig");
+        let expresion2 = /Lorem{1,2}/i;
+
+     console.log(expresion2.test(cadena));
+     console.log(expresion2.exec(cadena));
+
+    </script>
+
+
+</body>
+</html>

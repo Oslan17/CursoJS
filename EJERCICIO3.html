@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIOS 3 </title>
+</head>
+<body>
+    <script>
+
+
+    // 12) Programa una función que determine si un número es primo 
+    //(aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.
+
+        const esPrimo = (n= undefined) => {
+        if (n === undefined) return console.error("no ingresaste un numero");
+        if (typeof n !=="number") return console.error("no es un numero valido");
+        if(n===0) return console.error("no se pueden 0");
+        if(n===1) return console.error("no se pueden  1");
+        if(Math.sign(n) ===-1) return console.error("no puede ser un nuemero negativo");
+        
+        let divisible = false;
+    
+     
+      for (i=2; i<n; i++){
+        if((n%i) === 0) {
+            divisible=true;
+            break;
+
+        }
+    }
+        return (divisible)
+        ? console.log(`el numero: ${n} no es un  numero primo`)
+        : console.log(`el numero ${n} si es primo`);
+    }
+
+    //   esPrimo(7);
+    //   esPrimo(24);
+
+    //  13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar. -->
+
+    const esPar = (n=undefined) => {
+    if (n === undefined) return console.error("no ingresaste un numero");
+    if (typeof n !=="number") return console.error("no es un numero valido");
+    if(n===0) return console.error("no se pueden 0");
+   
+    return ((n%2) === 0)
+        ? console.info(`el numero ingresado es par`)
+        :console.info(`el numero ingresado es impar`)
+
+    }
+    // esPar(2);
+
+    // 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
+
+    const convertirGrados = (grados=undefined, unidad=undefined) => {
+    if (grados === undefined) return console.error("no ingresaste un grado");
+    if (typeof grados !=="number") return console.error("no es un grado valido");
+    if (unidad === undefined) return console.error("no ingresaste una unidad ");
+    if (typeof unidad !=="string") return console.error("el valor ingresado no es una candena de texto");
+    if(unidad.length !==1 || !/(C|F)/.test(unidad)) return console.error("Valor de unidad no reconocida");
+    
+        if (unidad === "C"){
+        return console.info(`${grados}°C = ${Math.round(grados * (9/5) + 32)}°F`);
+        }else if (unidad === "F"){
+        return console.info(`${grados}°F = ${Math.round(grados-32*(5/9))}°C`);
+        }
+    }
+
+    convertirGrados(100,"C");
+    convertirGrados(2,"F");
+
+    </script>
+</body>
+</html>

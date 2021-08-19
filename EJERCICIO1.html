@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EJERCIO 1</title>
+  </head>
+  <body>
+    <script>
+      // 1) Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.
+
+      const miFuncion = (contar = "") =>
+        !contar
+          ? console.warn(" No es un string valido")
+          : console.log(contar.length);
+
+      miFuncion("hola Mundo");
+
+      // 2) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".
+
+       // Solucion 2.1 
+      // function recortarLetras(recortar = "", recorte =undefined ){
+      // if(!recortar){
+
+      //     console.warn(" No es un string valido")
+      // }else {
+      // console.log(recortar.slice(0,recorte))
+      //     }
+      // }
+
+      // solucion 2.2  la mejor manera.
+      
+      const recortarLetras = (recortar = "", recorte = undefined) =>
+        !recortar
+          ? console.warn(" No es un string valido")
+          : recorte === undefined
+          ? console.warn("No ingresaste una longitud")
+          : console.log(recortar.slice(recorte));
+
+      recortarLetras("Hola mundo", 5);
+      recortarLetras("Oslan Villalobos", 5);
+
+      // 3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'].
+
+      const convertirArray = (convertidor = "", separador = undefined) =>
+        !convertidor
+          ? console.warn(" No es un string valido")
+          : separador === undefined
+          ? console.warn("No es superador valido")
+          : console.log(convertidor.split(separador));
+
+      convertirArray("Hola Jon MirCha", ",");
+
+      // 4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
+
+      const repetir = (frase = "", rep = undefined) => {
+        if (!frase) return console.warn("no hay es una candena valida");
+        if (rep === 0) return console.error("El numero no puede ser 0");
+        if (Math.sign(rep) === -1) return console.error("el numero no puede ser negativo");
+        for (let i = 0; i < rep; i++) {
+          console.info(`${frase} ${rep}`);
+        }
+      };
+
+      repetir("", 0);
+
+    </script>
+  </body>
+</html>

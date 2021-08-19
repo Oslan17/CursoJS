@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script> const ordenarArrelgo = (arra =undefined) => {
+    if (arra==undefined) return console.warn(" No ingresaste un arreglo de numeros");
+    if (!(arra instanceof Array)) return console.warn("el valor que ingresaste no es un arreglo")
+    if (arra.length===0) return console.error(`ingresaste un narreglo vacio`)
+    for(let numero of arra){
+    if(typeof numero !=="number") return console.error(`el valor ${numero} no es un numero`);}
+    return console.info({
+    arra,
+    acen:arra.map(el =>el).sort(),
+    desc:arra.map(el =>el).sort().reverse(),
+
+
+    })
+
+    ordenarArrelgo([7,5,4,5,98,1]);</script>
+    
+   
+
+</body>
+</html>

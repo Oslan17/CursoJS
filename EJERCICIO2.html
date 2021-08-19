@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EJERCICIO 2</title>
+  </head>
+  <body>
+    <script>
+      // 5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
+
+      const invirtiendoPalabra = (frase = "") => {
+        if (!frase) return console.error("no es una string valido ");
+        console.log(frase.split("").reverse().join(""));
+      };
+      invirtiendoPalabra("Hola mundo");
+
+      // 6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+
+      const palabraRepetida = (frase = "", palabra = " ") => {
+        if (!frase || !palabra) return console.error("no es una strings");
+        let contador = 0;
+        let palabras = frase.split(" ");
+        palabra = palabra.toLowerCase();
+        // console.log(palabras);
+        for (let i = 0; i < frase.length; i++) {
+          if (palabras[i] === palabra) contador++;
+        }
+        return console.info(
+          `En la oracion: ${frase}, se repite la palabra = ${palabra}.  ${contador} veces:`
+        );
+      };
+      palabraRepetida("hola mundo hola, hola hola hola hola hola", "hola");
+
+      // 7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
+      // oso
+      // salas
+      // amad a la dama
+      // ana
+
+      function esPalindromo(palabra ="") {
+        if (!palabra) {
+          return console.warn(" no es un string valido");
+        }
+
+        palabra = palabra.toLowerCase();
+        let reverso = palabra.split("").reverse().join("");
+
+        if (palabra === reverso) {
+          console.info("es un palindromo ");
+        } else {
+          console.info("no es un palindromo");
+        }
+      }
+
+     esPalindromo("salas");
+     esPalindromo("oso");
+     esPalindromo("taxi");
+
+    //8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. 
+    // miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5. 
+
+    const dividirPatron = (texto="",patron="") => {
+      (!texto) 
+      ? console.warn("no es un texto valido")
+      :(!patron)
+      ? console.wan("no es un patron valido")
+      :console.info(texto.replace(new RegExp(patron,"ig"),""));
+    } 
+
+    dividirPatron("xyz1, xyz2, xyz3, xyz4  xyz5 xyz","xyz")
+
+    </script>
+  </body>
+</html>

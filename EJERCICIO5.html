@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIOS 5</title>
+</head>
+<body>
+    
+<script>
+    
+// 18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
+
+const contarLetras = (cadena="")=> {
+if (!cadena) return console.warn("no ingresaste una candea valida")
+
+let vocales = 0;
+let consonantes = 0;
+
+ cadena = cadena.toLocaleLowerCase();
+
+for (let letra of cadena){
+
+if(/[AEIOUaeiou]/.test(letra)){
+    vocales++;
+
+}
+if(/[BCDFGHJJKLMNÑPQRSTVWXYZbcdfghjjklmnñpqrstvwxyz]/.test(letra)){
+    consonantes++;
+}
+
+}
+
+console.info({
+
+cadena:cadena,
+vocales:vocales,
+consonantes:consonantes,
+})
+
+}
+
+// contarLetras();
+// contarLetras("Maria");
+// contarLetras("Hola Mundo");
+// contarLetras("Ñoño");
+// contarLetras("Asimismo, el uso de mayúsculas o minúsculas ha sufrido variaciones a lo largo de los años, a pesar que hoy por lo general las letras mayúsculas se reservan para los nombres propios con numerosas excepciones.")
+
+// 19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
+ const ValidarNombre = (nombre ="") => {
+    if (!nombre) return console.warn("no ingresaste un nombre valido");
+    if (typeof nombre!=="string") return console.error(`el Valor ${nombre} no es una candena de texto valida`);
+
+
+    let expresionRegular = /^[A-Za-zÑñ\s]+$/g.test(nombre);
+
+    return (expresionRegular)
+    ? console.info(`${nombre} si es un nombre valido`)
+    :console.warn(`${nombre} no es un nombre valido`)
+
+ }
+//  ValidarNombre("Oslan")
+//  ValidarNombre("Oslan123")
+
+// 20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
+const validarEmail = (email ="") => {
+    if (!email) return console.warn("no ingresaste un nombre valido");
+    if (typeof email!=="string") return console.error(`el Valor ${email} no es una candena de texto valida`);
+
+
+    let expresionRegular = /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(email);
+    
+    return (expresionRegular)
+    ? console.info(`${email} si es un mail valido`)
+    :console.warn(`${email} no es un mail valido`)
+}
+
+validarEmail("oslanevillalobos@gmail.com");
+validarEmail("alexislomama@ma.x");
+</script>
+</body>
+</html>
