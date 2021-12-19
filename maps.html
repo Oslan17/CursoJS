@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso JavaScript: 51. Maps </title>
+</head>
+<body>
+    <script>
+
+        let mapa = new Map();
+        mapa.set("Nombre","Oslan");
+        mapa.set("Apellido", "Villalobos");
+        mapa.set("edad",28);
+
+        console.log(mapa);
+        mapa.set("Nombre","Oslan Enrique")
+        console.log(mapa);
+
+        mapa.delete("Apellido");
+        console.log(mapa);
+
+
+        for (let [key,value] of mapa){
+
+            console.log(`Llave:${key}, valor: ${value}`);
+
+        }
+
+        mapa.set(19,"diecinueve");
+        mapa.set(false,"false");
+        mapa.set({},{});
+
+        console.log(mapa);
+
+        let arr = new Array([1,2,3,4,5]);
+
+        console.log(arr);
+
+
+    </script>
+    
+</body>
+</html>

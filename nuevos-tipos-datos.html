@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso JavaScript: 49. Symbols</title>
+</head>
+<body>
+    <script>
+
+        let id = Symbol("id");
+        let id2 =Symbol("id2");
+
+        console.log(id===id2);
+
+        const NOMBRE = Symbol();
+        const SALUDAR = Symbol(" es una funcion saludo");
+        
+        const  persona = {
+        [NOMBRE]:"Oslan",
+         edad: 28   
+
+
+        }
+
+        console.log(persona)
+        persona.NOMBRE =" OSlan Villalobos"
+        console.log(persona);
+        console.log(persona[NOMBRE]);
+        
+        persona[SALUDAR] = function (){
+            console.log("hola QUE TAL");
+
+        }
+        console.log(persona);
+        persona[SALUDAR]();
+
+    </script>
+</body>
+</html>
